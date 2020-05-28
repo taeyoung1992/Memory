@@ -1,6 +1,7 @@
-package com.gmail.moontae0317.memory
+package com.gmail.moontae0317.memory.database
 
 import androidx.room.*
+import com.gmail.moontae0317.memory.database.Memory
 
 @Dao
 interface MemoryDao {

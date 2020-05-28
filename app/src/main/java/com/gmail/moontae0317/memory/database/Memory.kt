@@ -1,4 +1,4 @@
-package com.gmail.moontae0317.memory
+package com.gmail.moontae0317.memory.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
