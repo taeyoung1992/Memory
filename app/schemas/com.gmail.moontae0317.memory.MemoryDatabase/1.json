@@ -1,0 +1,75 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "873414d5e51a5a3e1b10e123e0428338",
+    "entities": [
+      {
+        "tableName": "memories",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`memory_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `memory_date` TEXT NOT NULL, `memory_who` TEXT NOT NULL, `memory_latitude` REAL NOT NULL, `memory_longitude` REAL NOT NULL, `memory_location` TEXT NOT NULL, `memory_picture` BLOB, `memory_content` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "memory_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "memory_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "who",
+            "columnName": "memory_who",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "memory_latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "memory_longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "memory_location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "picture",
+            "columnName": "memory_picture",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "memory_content",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "memory_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"873414d5e51a5a3e1b10e123e0428338\")"
+    ]
+  }
+}
