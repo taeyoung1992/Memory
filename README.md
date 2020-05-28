@@ -7,7 +7,7 @@
 <h3>라이브러리 및 오픈소스</h3>
 -kotlin<br>
 -Room : 로컬데이터베이스에 데이터 저장<br>
-
-오픈소스<br>
+<br>
+오픈소스
 - BoomMenu : https://github.com/Nightonke/BoomMenu
 
