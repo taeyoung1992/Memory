@@ -96,6 +96,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
+        android:onClick="onClick"
         android:text="데이터 추가"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,6 +109,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
+        android:onClick="onClick"
         android:text="데이터 수정"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_insert" />
@@ -132,6 +134,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
+        android:onClick="onClick"
         android:text="데이터 삭제"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

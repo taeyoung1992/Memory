@@ -20,9 +20,7 @@ class DatabaseTestActivity : AppCompatActivity(),View.OnClickListener {
 
         db = Room.databaseBuilder(this, MemoryDatabase::class.java,"memory.db").allowMainThreadQueries().build()
 
-        btn_insert.setOnClickListener(this)
-        btn_delete.setOnClickListener(this)
-        btn_update.setOnClickListener(this)
+
 
 
 
