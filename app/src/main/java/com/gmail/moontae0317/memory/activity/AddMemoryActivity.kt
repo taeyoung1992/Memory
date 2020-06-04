@@ -3,6 +3,7 @@ package com.gmail.moontae0317.memory.activity
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Camera
@@ -32,12 +33,14 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
 
     val REQUEST_IMAGE_CAPTURE = 1  //카메라 사진 촬영 요청 코드 *임의로 값 입력
     lateinit var currentPhotoPath : String //문자열 형태의 사진 경로값 (초기값을 null로 시작하고 싶을 때 - lateinti var)
+    val REQUEST_IMAGE_PICK = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_memory)
 
         setPermission()
+
 
     }
 
@@ -67,10 +70,18 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
                 takeCapture()
             }
             R.id.btn_photo->{
-
+                getPhotoFromMyGallary()
             }
         }
     }
+
+    private fun getPhotoFromMyGallary() {
+        Intent(Intent.ACTION_PICK).apply{
+            type = "image/*"
+            startActivityForResult(this,REQUEST_IMAGE_PICK)
+        }
+    }
+
     //기본 카메라 앱을 사용해서 사진 촬영
     private fun takeCapture() {
         //기본 카메라 앱 실행
@@ -97,8 +108,9 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
     private fun createImageFile(): File {
         val timestamp : String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val storageDir : File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile("JPEG_${timestamp}_",".jpg",storageDir).apply {
+        return File.createTempFile("JPEG_${timestamp}_",".jpeg",storageDir).apply {
             currentPhotoPath = absolutePath
+            Log.d("pathpath",currentPhotoPath)
         }
     }
 
@@ -121,6 +133,10 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
                 img_photo.setImageBitmap(bitmap)
             }
             savePhoto(bitmap)
+        }
+
+        if(requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK){
+            img_photo.setImageURI(data?.data)
         }
     }
 

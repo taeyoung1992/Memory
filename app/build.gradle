@@ -50,5 +50,5 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:2.2.5"
     implementation 'com.nightonke:boommenu:2.1.1'
     kapt 'com.ramotion.foldingcell:folding-cell:1.2.3'
-    implementation 'gun0912.ted:tedpermission:2.2.3'//카메라 사용시 권한 요청을 위한 팝업을 쉽게 구성하기 위해
+    implementation 'gun0912.ted:tedpermission:2.2.3'//권한 요청을 위한 팝업을 쉽게 구성하기 위해
 }
