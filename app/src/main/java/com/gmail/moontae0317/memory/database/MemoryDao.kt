@@ -33,5 +33,5 @@ interface MemoryDao {
     //선택한 메모리 데이터 가져오기
     @Query("SELECT * FROM memories WHERE memory_id = (:memoryId) LIMIT 1")
     fun getCheckedMemory(memoryId : Int) : Memory
-    
+
 }

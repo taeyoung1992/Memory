@@ -74,7 +74,7 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
             }
         }
     }
-
+    //사진첩에서 사진 불러오기
     private fun getPhotoFromMyGallary() {
         Intent(Intent.ACTION_PICK).apply{
             type = "image/*"
@@ -110,7 +110,6 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
         val storageDir : File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile("JPEG_${timestamp}_",".jpeg",storageDir).apply {
             currentPhotoPath = absolutePath
-            Log.d("pathpath",currentPhotoPath)
         }
     }
 
@@ -153,8 +152,6 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
         //실제적인 저장 처리
         val out = FileOutputStream(folderPath + fileName)
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out)
-        Log.d("55555555","OK")
         Toast.makeText(this,"사진이 앨범에 저장되었습니다.",Toast.LENGTH_SHORT).show()
-        Log.d("66666666","OK")
     }
 }

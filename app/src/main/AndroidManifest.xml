@@ -21,7 +21,8 @@
         android:requestLegacyExternalStorage="true">
         <activity android:name=".activity.AddMemoryActivity"></activity>
         <activity android:name=".activity.UserActivity" />
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
