@@ -1,9 +1,9 @@
-package com.gmail.moontae0317.memory.database
+package com.gmail.moontae0317.memory.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.gmail.moontae0317.memory.database.Memory
-import com.gmail.moontae0317.memory.database.MemoryDao
+import com.gmail.moontae0317.memory.data.db.Memory
+import com.gmail.moontae0317.memory.data.db.MemoryDao
 
 @Database(entities = arrayOf(Memory::class), version = 1)
 abstract class MemoryDatabase : RoomDatabase(){

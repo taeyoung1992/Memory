@@ -1,20 +1,14 @@
-package com.gmail.moontae0317.memory.activity
+package com.gmail.moontae0317.memory.ui
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.room.Room
-import com.gmail.moontae0317.memory.database.Memory
-import com.gmail.moontae0317.memory.database.MemoryDatabase
+import com.gmail.moontae0317.memory.data.db.Memory
+import com.gmail.moontae0317.memory.data.db.MemoryDatabase
 import com.gmail.moontae0317.memory.R
 import kotlinx.android.synthetic.main.activity_database_test.*
-import java.io.ByteArrayOutputStream
 
 class DatabaseTestActivity : AppCompatActivity(),View.OnClickListener {
 

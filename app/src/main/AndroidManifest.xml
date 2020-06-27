@@ -19,9 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true">
-        <activity android:name=".activity.AddMemoryActivity"></activity>
-        <activity android:name=".activity.UserActivity" />
-        <activity android:name=".activity.SplashActivity"
+        <activity android:name=".ui.AddMemoryActivity"></activity>
+        <activity android:name=".ui.user.UserActivity" />
+        <activity android:name=".ui.splash.SplashActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DatabaseTestActivity" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".ui.DatabaseTestActivity" />
+        <activity android:name=".ui.main.MainActivity" />
         
         <provider
             android:authorities="com.gmail.moontae0317.memory.fileprovider"

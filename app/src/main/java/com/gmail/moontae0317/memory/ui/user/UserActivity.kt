@@ -1,12 +1,14 @@
-package com.gmail.moontae0317.memory.activity
+package com.gmail.moontae0317.memory.ui.user
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.gmail.moontae0317.memory.R
+import com.gmail.moontae0317.memory.data.db.MemoryDao
+import com.gmail.moontae0317.memory.data.db.MemoryDatabase
+import com.gmail.moontae0317.memory.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {
@@ -16,6 +18,7 @@ class UserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user)
 
         userCheck()
+
 
     }
 
@@ -27,12 +30,14 @@ class UserActivity : AppCompatActivity() {
             btn_next.setOnClickListener {
                 editor.putString("userName",edit_user.text.toString())
                 editor.commit()
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this,
+                    MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
         }else{
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,
+                MainActivity::class.java)
             startActivity(intent)
             finish()
         }

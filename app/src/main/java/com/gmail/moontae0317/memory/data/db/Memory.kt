@@ -1,22 +1,9 @@
-package com.gmail.moontae0317.memory.database
+package com.gmail.moontae0317.memory.data.db
 
-import android.app.Application
-import android.content.Context
-import android.content.res.Resources
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
-import android.widget.ResourceCursorAdapter
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.gmail.moontae0317.memory.R
-import com.gmail.moontae0317.memory.activity.DatabaseTestActivity
-import com.nightonke.boommenu.Util.getDrawable
-import java.io.ByteArrayOutputStream
 
 @Entity(tableName = "memories")
 data class Memory(
