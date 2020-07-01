@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.main.MainActivity"
+    android:background="#ffffff">
 
     <TextView
         android:id="@+id/text_user"
@@ -15,7 +16,9 @@
         android:layout_marginTop="30dp"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="user"
+        android:textColor="#000000"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,30 +29,69 @@
         android:layout_marginTop="50dp"
         android:gravity="center_vertical"
         android:text="님 환영합니다."
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/text_user"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_noItem"
+        android:layout_width="315dp"
+        android:layout_height="63dp"
+        android:autoText="false"
+        android:background="#626161"
+        android:gravity="clip_horizontal|center_horizontal|center_vertical"
+        android:text="환영합니다.\n추가 버튼을 눌러 새로운 추억을 저장해보세요."
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textIsSelectable="false"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+
+    <Button
+        android:id="@+id/btn_memoryList"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:text="전체목록"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        android:drawableLeft="@drawable/all_list_image_setting"
+        style="?android:attr/borderlessButtonStyle"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
+        android:foregroundGravity="center_horizontal"
         android:scrollbars="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         tools:listitem="@layout/memory_form" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="350dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView">
+        app:layout_constraintTop_toBottomOf="@+id/btn_memoryList"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,28 +100,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_serchMemory"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="달력" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:text="지도" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                android:text="검색" />
 
             <Button
                 android:id="@+id/btn_addMemory"
@@ -88,14 +115,39 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:text="추가" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btn_map"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="검색" />
+                android:text="지도" />
+
+            <Button
+                android:id="@+id/btn_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="달력" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카카오 애드 광고 넣어보기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

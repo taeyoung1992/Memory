@@ -2,26 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gmail.moontae0317.memory">
 
-    <uses-permission android:name="android.permission.CAMERA" /><!--카메라 권한-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><!--파일 읽기 권한-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!--파일 쓰기 권한-->
-    <uses-feature android:name="android.hardware.camera" android:required="true"/><!--카메라 기능 사용-->
-
-
-
-
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 카메라 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 파일 읽기 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 파일 쓰기 권한 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true">
-        <activity android:name=".ui.AddMemoryActivity"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.map.CheckMemoryOnMapActivity"></activity>
+        <activity android:name=".ui.memoryList.MemoryListActivity" />
+        <activity android:name=".ui.addMemory.AddMemoryActivity" />
         <activity android:name=".ui.user.UserActivity" />
-        <activity android:name=".ui.splash.SplashActivity"
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,13 +32,14 @@
         </activity>
         <activity android:name=".ui.DatabaseTestActivity" />
         <activity android:name=".ui.main.MainActivity" />
-        
+
         <provider
-            android:authorities="com.gmail.moontae0317.memory.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.gmail.moontae0317.memory.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
     </application>

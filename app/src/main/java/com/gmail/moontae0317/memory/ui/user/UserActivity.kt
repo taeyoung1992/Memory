@@ -41,8 +41,6 @@ class UserActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-
     }
 
 }

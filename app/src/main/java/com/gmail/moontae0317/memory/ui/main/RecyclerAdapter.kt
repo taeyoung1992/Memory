@@ -25,7 +25,7 @@ class RecyclerAdapter (private val memories : ArrayList<Memory>):RecyclerView.Ad
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val memory = memories[position]
         val listener = View.OnClickListener { it ->
-            Toast.makeText(it.context,"Clicked : ${memory.location}",Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context,"Clicked : ${memory.id}",Toast.LENGTH_SHORT).show()
         }
         holder.apply {
             bind(listener,memory)

@@ -1,4 +1,4 @@
-package com.gmail.moontae0317.memory.ui
+package com.gmail.moontae0317.memory.ui.addMemory
 
 import android.app.Activity
 import android.content.Intent
@@ -17,6 +17,7 @@ import com.gmail.moontae0317.memory.R
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import kotlinx.android.synthetic.main.activity_add_memory.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileOutputStream
 import java.lang.Exception
@@ -34,8 +35,6 @@ class AddMemoryActivity : AppCompatActivity(),View.OnClickListener {
         setContentView(R.layout.activity_add_memory)
 
         setPermission()
-
-
     }
 
     //테드 퍼미션 설정 (카메라 사용시 권한 설정 팝업을 쉽게 구현하기 위해 사용)
